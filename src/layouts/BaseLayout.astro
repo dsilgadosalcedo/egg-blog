@@ -12,14 +12,23 @@ const {pageTitle} = Astro.props
         <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
     </head>
-    <body class="
-        bg-gradient-to-br from-indigo-200 via-red-200 to-yellow-100
-        min-h-screen
-        [&>h1]:text-3xl [&>h1]:font-bold [&>h1]:m-6 [&>h1]:text-center
-    ">
-        <Header pageTitle={pageTitle} />
-        <slot />
-        <Footer />
+    <body>
+        <div class="
+            flex flex-col
+            min-h-screen 
+            bg-gradient-to-br 
+            from-indigo-200 via-red-200 to-yellow-100
+        ">
+            <Header pageTitle={pageTitle} />
+            <main class="
+                flex-grow
+                mx-48 z-20 my-6
+                [&>h1]:text-3xl [&>h1]:font-bold [&>h1]:mb-6 [&>h1]:text-center
+                ">
+                <slot />
+            </main>
+            <Footer />
+        </div>
         <script>
         import "../scripts/menu.js";
         </script>

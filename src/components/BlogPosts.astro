@@ -2,25 +2,20 @@
 import Tag from '../components/Tag.astro'
 const { posts } = Astro.props;
 ---
-<ul class="flex flex-col gap-4 items-center">
+<ul class="flex flex-col gap-6">
   {posts.map((post) => 
-
-<li>
-  <div class="
-    flex justify-between items-center
-    cursor-pointer
-    text-blue-950
-    hover:scale-105 duration-500 ease-in-out
-    "
-    id=`${post.url? post.url : post.frontmatter.url}`>
-    <div class="relative flex-shrink-0 w-[720px] mx-2 mb-6 overflow-hidden border-4 shadow-lg sm:mb-0">
-      <!-- <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none">
-          <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="#6da3fb">
-          </rect>
-          <rect x="89.52" y="277.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="#6ddfff">
-          </rect>
-      </svg> -->
-      <div class="relative px-6 pb-6 mt-6 flex justify-between items-center">
+    <li>
+      <div class="
+        flex justify-between items-center
+        cursor-pointer
+        text-blue-950
+        hover:scale-105 duration-500 ease-in-out
+        w-full p-6
+        border-2 rounded
+        shadow-lg
+        "
+        id=`${post.url? post.url : post.frontmatter.url}`
+      >
         <div>
           <span class="block -mb-1 opacity-75 max-w-sm">
             {post.frontmatter.title}
@@ -37,10 +32,7 @@ const { posts } = Astro.props;
           )}
         </div>
       </div>
-    </div>
-  </but>
-</li>
-
+    </li>
     )}
 </ul>
 
